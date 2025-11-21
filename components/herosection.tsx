@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "react-bootstrap";
 
-// Data Tech Stack
 const row1Tech = [
   "Next.js",
   "React",
@@ -33,7 +32,6 @@ const row3Tech = [
   "Firebase",
 ];
 
-// Komponen Helper Marquee
 const BackgroundMarqueeRow = ({
   items,
   direction,
@@ -47,7 +45,6 @@ const BackgroundMarqueeRow = ({
         direction === "left" ? "direction-left" : "direction-right"
       }`}
     >
-      {/* Render 4x untuk memastikan loop mulus di layar lebar */}
       {[...items, ...items, ...items, ...items].map((item, index) => (
         <span key={index} className="hero-marquee-item">
           {item}
@@ -64,17 +61,14 @@ const HeroSection = () => {
       className="position-relative d-flex align-items-center justify-content-center"
       style={{ height: "100vh", width: "100%", overflow: "hidden" }}
     >
-      {/* 1. BACKGROUND MARQUEE (Layer Paling Belakang z-index: 1) */}
       <div className="hero-background-marquee">
         <BackgroundMarqueeRow items={row1Tech} direction="left" />
         <BackgroundMarqueeRow items={row2Tech} direction="right" />
         <BackgroundMarqueeRow items={row3Tech} direction="left" />
       </div>
 
-      {/* 2. OVERLAY GELAP (Layer Tengah z-index: 5) */}
       <div className="hero-overlay-dark"></div>
 
-      {/* 3. KONTEN UTAMA (Layer Depan z-index: 10) */}
       <div
         className="text-center text-white"
         style={{ zIndex: 10, position: "relative" }}
@@ -85,7 +79,6 @@ const HeroSection = () => {
           and code.
         </p>
 
-        {/* Tombol menggunakan variant="primary" yang sudah di-override jadi Ungu di CSS */}
         <Button
           variant="primary"
           size="lg"

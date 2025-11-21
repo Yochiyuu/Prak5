@@ -27,10 +27,9 @@ function ServiceSection() {
     <section
       id="skills"
       className="py-5"
-      style={{ backgroundColor: "#0a0a0a" }} // Sedikit lebih terang dari pure black
+      style={{ backgroundColor: "#0a0a0a" }}
     >
       <Container className="py-5">
-        {/* Header Section */}
         <Row className="justify-content-center mb-5">
           <Col lg={8} className="text-center">
             <h6 className="text-info text-uppercase fw-bold letter-spacing-2 mb-2">
@@ -46,27 +45,25 @@ function ServiceSection() {
           </Col>
         </Row>
 
-        {/* Cards Section */}
         <Row className="g-4">
           {services.map((service) => (
             <Col md={6} lg={4} key={service.id}>
               <Card
                 className="h-100 border-0 shadow-sm service-card"
                 style={{
-                  backgroundColor: "#121212", // Warna Card Gelap
+                  backgroundColor: "#121212",
                   borderRadius: "15px",
                   border: "1px solid #222",
                 }}
               >
                 <Card.Body className="p-4 text-center text-md-start">
-                  {/* Icon Wrapper */}
                   <div
                     className="d-inline-flex align-items-center justify-content-center mb-4 rounded-circle"
                     style={{
                       width: "60px",
                       height: "60px",
-                      backgroundColor: "rgba(13, 202, 240, 0.1)", // Efek transparansi warna Info
-                      color: "#0dcaf0", // Warna Info Bootstrap
+                      backgroundColor: "rgba(13, 202, 240, 0.1)",
+                      color: "#0dcaf0",
                     }}
                   >
                     <i className={`bi ${service.icon} fs-3`}></i>

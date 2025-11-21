@@ -7,20 +7,19 @@ import Navbar from "react-bootstrap/Navbar";
 function NavigationBar() {
   const [expanded, setExpanded] = useState(false);
 
-  // PERBAIKAN UTAMA: Tipe data diubah jadi 'HTMLElement' agar tidak error di TypeScript
   const handleScroll = (e: React.MouseEvent<HTMLElement>, id: string) => {
-    e.preventDefault(); // Mencegah browser sekadar "lompat" kasar
-    setExpanded(false); // Menutup menu mobile setelah diklik
+    e.preventDefault();
+    setExpanded(false);
 
     const element = document.getElementById(id);
     if (element) {
-      const offset = 100; // Mengatur jarak agar judul tidak tertutup Navbar
+      const offset = 100;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - offset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth", // Memaksa animasi scroll halus
+        behavior: "smooth",
       });
     }
   };
@@ -75,7 +74,6 @@ function NavigationBar() {
               Skills
             </Nav.Link>
 
-            {/* Tambahan Link Contact agar lengkap sesuai halaman */}
             <Nav.Link
               href="#contact"
               onClick={(e) => handleScroll(e, "contact")}

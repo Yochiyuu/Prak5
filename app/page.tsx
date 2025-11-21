@@ -1,15 +1,11 @@
 "use client";
 import Image from "next/image";
-
-// Components
 import ContactSection from "../components/contactsection";
 import Footer from "../components/footer";
 import HeroSection from "../components/herosection";
 import Navbar from "../components/navbar";
 import ServiceSection from "../components/servicesection";
 import WorkSection from "../components/worksection";
-
-// Bootstrap
 import { Button, Col, Container, Row } from "react-bootstrap";
 
 export default function Home() {
@@ -20,10 +16,8 @@ export default function Home() {
       </div>
 
       <main>
-        {/* Hero sudah punya id="home" di dalamnya */}
         <HeroSection />
 
-        {/* Section ABOUT masih manual di sini karena belum dipisah ke komponen */}
         <section
           id="about"
           className="min-vh-100 d-flex align-items-center position-relative overflow-hidden py-5"
@@ -134,17 +128,14 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* PORTFOLIO: Hapus id="portfolio" di sini karena sudah ada di WorkSection */}
         <div className="bg-dark">
           <WorkSection />
         </div>
 
-        {/* SKILLS: Hapus id="skills" di sini, pastikan di ServiceSection id-nya "skills" */}
         <div>
           <ServiceSection />
         </div>
 
-        {/* CONTACT: Hapus id="contact" di sini, pastikan di ContactSection id-nya "contact" */}
         <div>
           <ContactSection />
         </div>

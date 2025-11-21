@@ -4,7 +4,6 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
 
-// ... (DATA PROJECT & VARIANTS TETAP SAMA, TIDAK PERLU DIUBAH) ...
 const projects = [
   {
     title: "Drew-discordbot",
@@ -46,7 +45,6 @@ function WorkSection() {
       style={{ backgroundColor: "#000000" }}
     >
       <Container>
-        {/* ... (BAGIAN DALAMNYA TETAP SAMA) ... */}
         <Row className="mb-5">
           <Col md={12} className="text-center text-white">
             <motion.h2
@@ -58,7 +56,6 @@ function WorkSection() {
             >
               Featured <span className="text-info">Projects</span>
             </motion.h2>
-            {/* ... sisa kode sama ... */}
             <motion.div
               className="mx-auto"
               style={{ maxWidth: "700px" }}

@@ -6,25 +6,22 @@ function ContactSection() {
     <section
       id="contact"
       className="py-5"
-      style={{ backgroundColor: "#050505" }} // Background Hitam Pekat
+      style={{ backgroundColor: "#050505" }}
     >
       <Container className="my-5 py-5">
-        {/* Membuat kolom pembungkus lebih lebar (lg={10} xl={11}) agar kartu memanjang */}
         <Row className="justify-content-center">
           <Col lg={10} xl={11}>
             <Card
               className="border-0 text-white overflow-hidden"
               style={{
-                backgroundColor: "#121212", // Warna Solid (Ringan)
+                backgroundColor: "#121212",
                 borderRadius: "20px",
                 border: "1px solid #333",
               }}
               data-bs-theme="dark"
             >
               <Card.Body className="p-0">
-                {/* Menggunakan Row di dalam Card untuk tata letak Kiri-Kanan */}
                 <Row className="g-0">
-                  {/* KOLOM KIRI: Informasi Teks (Hanya muncul di desktop agar tidak tinggi) */}
                   <Col
                     lg={5}
                     className="p-5 d-flex flex-column justify-content-center border-end border-secondary border-opacity-25"
@@ -42,7 +39,6 @@ function ContactSection() {
                         tentang teknologi Web3? Saya siap mendengar cerita Anda.
                       </p>
 
-                      {/* Info Tambahan Kecil */}
                       <div className="mt-auto pt-3">
                         <div className="d-flex align-items-center mb-3">
                           <i className="bi bi-envelope-at fs-4 text-info me-3"></i>
@@ -58,7 +54,6 @@ function ContactSection() {
                     </div>
                   </Col>
 
-                  {/* KOLOM KANAN: Formulir */}
                   <Col lg={7} className="p-5 bg-dark bg-opacity-10">
                     <Form>
                       <Row>
@@ -109,7 +104,7 @@ function ContactSection() {
                         </Form.Label>
                         <Form.Control
                           as="textarea"
-                          rows={4} // Mengurangi tinggi rows sedikit agar pas
+                          rows={4}
                           placeholder="Ceritakan detail proyek atau pesan Anda..."
                           className="form-control-solid"
                           required
