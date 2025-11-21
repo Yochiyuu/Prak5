@@ -35,7 +35,7 @@ export default function Home() {
                   }}
                 >
                   <Image
-                    src="/Prak5/images/Drew.png"
+                    src="/images/Drew.png"
                     alt="Andrew Reinhart"
                     width={500}
                     height={650}
