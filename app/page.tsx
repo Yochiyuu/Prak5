@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import ContactSection from "../components/contactsection";
 import Footer from "../components/footer";
 import HeroSection from "../components/herosection";
 import Navbar from "../components/navbar";
 import ServiceSection from "../components/servicesection";
 import WorkSection from "../components/worksection";
-import { Button, Col, Container, Row } from "react-bootstrap";
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
                   }}
                 >
                   <Image
-                    src="/images/Drew.png"
+                    src="/Prak5/images/Drew.png"
                     alt="Andrew Reinhart"
                     width={500}
                     height={650}

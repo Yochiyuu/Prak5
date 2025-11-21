@@ -1,23 +1,24 @@
 "use client";
+import Image from "next/image";
 import { Card, Col, Container, Row } from "react-bootstrap";
 
 function ServiceSection() {
   const services = [
     {
       id: 1,
-      icon: "bi-code-slash",
+      image: "/Prak5/images/about-icon1.png",
       title: "Web Development",
       desc: "Membangun website responsif dan cepat menggunakan teknologi modern seperti React, Next.js, dan Bootstrap.",
     },
     {
       id: 2,
-      icon: "bi-palette",
+      image: "/Prak5/images/about-icon2.png",
       title: "UI/UX Design",
       desc: "Merancang antarmuka yang estetis dan ramah pengguna (User Friendly) untuk meningkatkan pengalaman digital.",
     },
     {
       id: 3,
-      icon: "bi-layers",
+      image: "/Prak5/images/about-icon3.png",
       title: "Blockchain / Web3",
       desc: "Pengembangan Smart Contract dan integrasi dApps menggunakan Lisk dan Ethereum.",
     },
@@ -60,13 +61,22 @@ function ServiceSection() {
                   <div
                     className="d-inline-flex align-items-center justify-content-center mb-4 rounded-circle"
                     style={{
-                      width: "60px",
-                      height: "60px",
+                      width: "80px", 
+                      height: "80px",
                       backgroundColor: "rgba(13, 202, 240, 0.1)",
-                      color: "#0dcaf0",
                     }}
                   >
-                    <i className={`bi ${service.icon} fs-3`}></i>
+                    {/* KEMBALIKAN KOMPONEN IMAGE DI SINI */}
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={50}
+                      height={50}
+                      style={{
+                        filter: "invert(1) brightness(2)", 
+                        opacity: 0.9,
+                      }}
+                    />
                   </div>
 
                   <h4 className="text-white fw-bold mb-3">{service.title}</h4>
