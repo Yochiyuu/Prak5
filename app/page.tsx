@@ -10,50 +10,147 @@ import ServiceSection from "../components/servicesection";
 import WorkSection from "../components/worksection";
 
 // Bootstrap
-import { Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      {/* Navbar Floating */}
+      <div className="navbar-floating-container">
+        <Navbar />
+      </div>
+
       <main>
-        <HeroSection></HeroSection>
-        <Container className="my-5">
-          <Row className="my-4">
-            <Col md={6} className="align-self-center mb-3">
-              <h2>About Us</h2>
-              <h6>What We Do?</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                assumenda, necessitatibus veniam vitae deleniti, quos nulla
-                obcaecati eligendi nihil hic cum ex. Dolor ab eum dolore earum
-                magni aut quis.
-              </p>
-              <Button variant="info">Learn More</Button>
-            </Col>
-            <Col md={6}>
-              <p>
-                <Image
-                  src="/images/about.jpg"
-                  alt="About Us"
-                  width={500}
-                  height={500}
-                ></Image>
-              </p>
-            </Col>
-          </Row>
-        </Container>
-        <section className="bg-dark">
-          <WorkSection></WorkSection>
+        <HeroSection />
+
+        {/* --- SECTION ABOUT ME --- */}
+        {/* Tambahkan class: min-vh-100, d-flex, align-items-center */}
+        <section
+          id="about"
+          className="min-vh-100 d-flex align-items-center position-relative overflow-hidden py-5"
+        >
+          <Container>
+            <Row className="align-items-center gx-5">
+              {/* KOLOM GAMBAR (KIRI) */}
+              <Col lg={5} className="mb-5 mb-lg-0 text-center text-lg-start">
+                <div
+                  className="d-inline-block position-relative"
+                  style={{
+                    border: "3px solid var(--info-color)",
+                    borderRadius: "1.5rem",
+                    padding: "15px",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  <Image
+                    src="/images/Drew.png"
+                    alt="Andrew Reinhart"
+                    width={500}
+                    height={650}
+                    className="img-fluid shadow-sm"
+                    style={{
+                      borderRadius: "1rem",
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    }}
+                  />
+                </div>
+              </Col>
+
+              {/* KOLOM TEKS (KANAN) */}
+              <Col lg={7}>
+                <div className="ps-lg-4">
+                  <h6
+                    className="text-uppercase fw-bold mb-2"
+                    style={{ color: "var(--info-color)" }}
+                  >
+                    Who I Am
+                  </h6>
+                  <h2 className="display-5 fw-bolder mb-4">
+                    Bridging{" "}
+                    <span style={{ color: "var(--primary-color)" }}>Web2</span>{" "}
+                    Efficiency with{" "}
+                    <span style={{ color: "var(--primary-color)" }}>Web3</span>{" "}
+                    Innovation.
+                  </h2>
+
+                  <p className="lead text-secondary mb-4">
+                    Hello! I'm Andrew. I started my journey crafting
+                    pixel-perfect UIs with
+                    <strong className="text-dark"> Next.js & React</strong>,
+                    ensuring every interaction feels smooth.
+                  </p>
+                  <p className="text-muted mb-5">
+                    Now, I'm expanding into the decentralized world. I build
+                    smart contracts on Lisk & Ethereum, aiming to create dApps
+                    that are not only secure but also accessible to everyone. My
+                    goal is to blend technical complexity with user-centric
+                    design.
+                  </p>
+
+                  {/* MINI STATS GRID */}
+                  <Row className="mb-5 g-3">
+                    <Col sm={6}>
+                      <div className="d-flex align-items-center p-3 rounded border bg-light">
+                        <h3
+                          className="mb-0 me-3 fw-bold"
+                          style={{ color: "var(--primary-color)" }}
+                        >
+                          2+
+                        </h3>
+                        <span className="small text-uppercase fw-bold text-muted lh-1">
+                          Years of
+                          <br />
+                          Dev Experience
+                        </span>
+                      </div>
+                    </Col>
+                    <Col sm={6}>
+                      <div className="d-flex align-items-center p-3 rounded border bg-light">
+                        <h3
+                          className="mb-0 me-3 fw-bold"
+                          style={{ color: "var(--info-color)" }}
+                        >
+                          10+
+                        </h3>
+                        <span className="small text-uppercase fw-bold text-muted lh-1">
+                          Projects
+                          <br />
+                          Completed
+                        </span>
+                      </div>
+                    </Col>
+                  </Row>
+
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    className="fw-bold px-4 rounded-pill shadow-sm"
+                    href="#contact"
+                  >
+                    Let's Collaborate
+                  </Button>
+                </div>
+              </Col>
+            </Row>
+          </Container>
         </section>
-        <ServiceSection></ServiceSection>
+
+        <section id="portfolio" className="bg-dark">
+          <WorkSection />
+        </section>
+
+        <section id="skills">
+          <ServiceSection />
+        </section>
+
         <section id="contact">
-          <ContactSection></ContactSection>
+          <ContactSection />
         </section>
-        <Footer></Footer>
+
+        <Footer />
       </main>
     </div>
   );

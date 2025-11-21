@@ -1,50 +1,38 @@
-'use client'
-import { use } from 'react';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+"use client";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 function navbar() {
-    return (
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container fluid>
-                <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
-                <Navbar.Toggle aria-controls="navbarScroll"></Navbar.Toggle>
-                <Navbar.Collapse id="navbarScroll">
-                    <Nav
-                        className="me-auto my-2 my-lg-0"
-                        style = {{ maxHeight: '100px'}}
-                        navbarScroll
-                    >
-                        <Nav.Link href="#action1">Home</Nav.Link>
-                        <Nav.Link href="#action2">Home</Nav.Link>
-                        <NavDropdown title="Link" id="navbarScrollingDropDown">
-                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
-                            <NavDropdown.Divider></NavDropdown.Divider>
-                            <NavDropdown.Item href="#action3">Something else here</NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link href="#" disabled>
-                            Link
-                        </Nav.Link>
-                    </Nav>    
-                    <Form className="d-flex">
-                        <Form.Control 
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        ></Form.Control>
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    )
+  return (
+    <Navbar
+      expand="lg" // --- PERUBAHAN DI SINI --- // 1. Hapus 'mx-5'
+      className="navbar-glassy fixed-top bg-transparent rounded-pill mt-3"
+      data-bs-theme="dark" // 2. Tambahkan style manual untuk lebar dan posisi tengah
+      style={{
+        width: "70%", // <-- GANTI INI (misal '80%') JIKA MAU LEBIH PENDEK
+        left: "50%",
+        transform: "translateX(-50%)",
+      }}
+    >
+      <Container fluid className="px-4">
+        <Navbar.Brand href="#home" className="fs-4 fw-bold">
+          Drew
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto my-2 fw-medium gap-3" navbarScroll>
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#about" className="text-nowrap">
+              About Me
+            </Nav.Link>
+            <Nav.Link href="#portfolio">Portfolio</Nav.Link>
+            <Nav.Link href="#skills">Skills</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
 export default navbar;
-
