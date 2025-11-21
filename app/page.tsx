@@ -15,23 +15,21 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 export default function Home() {
   return (
     <div>
-      {/* Navbar Floating */}
       <div className="navbar-floating-container">
         <Navbar />
       </div>
 
       <main>
+        {/* Hero sudah punya id="home" di dalamnya */}
         <HeroSection />
 
-        {/* --- SECTION ABOUT ME --- */}
-        {/* Tambahkan class: min-vh-100, d-flex, align-items-center */}
+        {/* Section ABOUT masih manual di sini karena belum dipisah ke komponen */}
         <section
           id="about"
           className="min-vh-100 d-flex align-items-center position-relative overflow-hidden py-5"
         >
           <Container>
             <Row className="align-items-center gx-5">
-              {/* KOLOM GAMBAR (KIRI) */}
               <Col lg={5} className="mb-5 mb-lg-0 text-center text-lg-start">
                 <div
                   className="d-inline-block position-relative"
@@ -59,7 +57,6 @@ export default function Home() {
                 </div>
               </Col>
 
-              {/* KOLOM TEKS (KANAN) */}
               <Col lg={7}>
                 <div className="ps-lg-4">
                   <h6
@@ -90,7 +87,6 @@ export default function Home() {
                     design.
                   </p>
 
-                  {/* MINI STATS GRID */}
                   <Row className="mb-5 g-3">
                     <Col sm={6}>
                       <div className="d-flex align-items-center p-3 rounded border bg-light">
@@ -138,17 +134,20 @@ export default function Home() {
           </Container>
         </section>
 
-        <section id="portfolio" className="bg-dark">
+        {/* PORTFOLIO: Hapus id="portfolio" di sini karena sudah ada di WorkSection */}
+        <div className="bg-dark">
           <WorkSection />
-        </section>
+        </div>
 
-        <section id="skills">
+        {/* SKILLS: Hapus id="skills" di sini, pastikan di ServiceSection id-nya "skills" */}
+        <div>
           <ServiceSection />
-        </section>
+        </div>
 
-        <section id="contact">
+        {/* CONTACT: Hapus id="contact" di sini, pastikan di ContactSection id-nya "contact" */}
+        <div>
           <ContactSection />
-        </section>
+        </div>
 
         <Footer />
       </main>

@@ -15,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Andrew Reinhart - Personal Portfolio",
+  title: "Drew Portofolio",
   description: "Portfolio of Andrew Reinhart, Web Developer and Designer",
 };
 
@@ -27,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        {/* Providers membalut children */}
         <Providers>{children}</Providers>
       </body>
     </html>

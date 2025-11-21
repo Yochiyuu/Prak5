@@ -1,13 +1,13 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
-  /* --- WARNA TEMA --- */
   --primary-color: #7c3aed;
-  /* Ungu Web3 */
   --info-color: #fbbf24;
-  /* Emas/Amber */
-
   --secondary-color: #6c757d;
   --dark-overlay: rgba(0, 0, 0, 0.6);
   --light-text: #f8f9fa;
@@ -46,10 +46,6 @@ a {
   text-decoration: none;
 }
 
-/* =================================
-   Hero Section Background Marquee
-   ================================= */
-
 .hero-background-marquee {
   position: absolute;
   top: 0;
@@ -79,21 +75,15 @@ a {
   will-change: transform;
 }
 
-/* Item teks di dalam track */
 .hero-marquee-item {
   font-size: 4rem;
   font-weight: 800;
   color: #32CD32;
-  /* Hijau Neon */
   opacity: 0.25;
   padding: 0 3rem;
   white-space: nowrap;
-
-  /* PERUBAHAN 1: text-transform dihapus agar tidak Capslock */
-  /* text-transform: uppercase; */
 }
 
-/* Animasi */
 @keyframes direction-left {
   0% {
     transform: translateX(0);
@@ -114,7 +104,6 @@ a {
   }
 }
 
-/* PERUBAHAN 2: Durasi diubah jadi 80s (makin besar angka, makin pelan) */
 .hero-marquee-track.direction-left {
   animation: direction-left 80s linear infinite;
 }
@@ -123,7 +112,6 @@ a {
   animation: direction-right 80s linear infinite;
 }
 
-/* Overlay gelap */
 .hero-overlay-dark {
   position: absolute;
   top: 0;
@@ -134,10 +122,6 @@ a {
   z-index: 5;
   pointer-events: none;
 }
-
-/* =================================
-   Override Bootstrap Buttons
-   ================================= */
 
 .btn-primary {
   background-color: var(--primary-color) !important;
@@ -164,9 +148,6 @@ a {
   box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
 }
 
-/* =================================
-   Navbar & Utilities Lain
-   ================================= */
 .navbar-floating-container {
   position: sticky;
   top: 1rem;
@@ -203,15 +184,12 @@ a {
   font-weight: bold;
 }
 
-/* Efek Hover Card Keren */
 .card-hover-effect {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-hover-effect:hover {
   transform: translateY(-10px);
-  /* Card naik ke atas */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important;
-  /* Bayangan makin tebal */
   z-index: 10;
 }

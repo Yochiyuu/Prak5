@@ -1,35 +1,34 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image"; // Pastikan import ini ada
+import Image from "next/image";
 import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
 
-// --- DATA PROJECT ---
+// ... (DATA PROJECT & VARIANTS TETAP SAMA, TIDAK PERLU DIUBAH) ...
 const projects = [
   {
     title: "Drew-discordbot",
-    desc: "Drew is a music bot that delivers clean, ad-free listening with a friendly and intuitive experience. Built for comfort and clarity, it keeps your Discord sessions smooth, responsive, and effortlessly enjoyable",
+    desc: "Drew is a music bot that delivers clean, ad-free listening...",
     image: "/images/drewbot.png",
     stack: ["Python", "Discord API"],
     color: "primary",
   },
   {
     title: "Corclo Social Media",
-    desc: "A modern social media platform focused on community interaction. It features a dynamic feed, seamless post creation, responsive navigation, and a custom aesthetic with an interactive Aurora background and dark mode support.",
+    desc: "A modern social media platform focused on community interaction...",
     image: "/images/corclo.png",
-    stack: ["Next.js", "Prisma ORM", "Bootstrap",],
+    stack: ["Next.js", "Prisma ORM", "Bootstrap"],
     color: "info",
   },
   {
     title: "Domain-crowdfund",
-    desc: "A decentralized application (dApp) for transparent fundraising. Users can create campaigns, donate via smart contracts, and track progress in real-time. It utilizes IPFS for decentralized data storage to ensure immutability.",
+    desc: "A decentralized application (dApp) for transparent fundraising...",
     image: "/images/domain.png",
     stack: ["Next.js", "Thirdweb SDK", "Solidity", "Ethers.js"],
     color: "success",
   },
 ];
 
-// --- ANIMASI ---
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -42,11 +41,12 @@ const cardVariants: Variants = {
 function WorkSection() {
   return (
     <section
-      id="work"
+      id="portfolio"
       className="min-vh-100 d-flex align-items-center py-5"
       style={{ backgroundColor: "#000000" }}
     >
       <Container>
+        {/* ... (BAGIAN DALAMNYA TETAP SAMA) ... */}
         <Row className="mb-5">
           <Col md={12} className="text-center text-white">
             <motion.h2
@@ -58,6 +58,7 @@ function WorkSection() {
             >
               Featured <span className="text-info">Projects</span>
             </motion.h2>
+            {/* ... sisa kode sama ... */}
             <motion.div
               className="mx-auto"
               style={{ maxWidth: "700px" }}
@@ -85,7 +86,6 @@ function WorkSection() {
                 transition={{ delay: index * 0.2 }}
               >
                 <Card className="card-hover-effect h-100 shadow border-0 bg-dark text-white overflow-hidden">
-                  {/* Bagian Gambar: Ganti ParallaxBanner dengan Image biasa */}
                   <div
                     style={{
                       height: "220px",
@@ -96,16 +96,14 @@ function WorkSection() {
                     <Image
                       src={project.image}
                       alt={project.title}
-                      fill // Agar memenuhi container parent
+                      fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="project-img-transition" // Class baru untuk animasi halus
+                      className="project-img-transition"
                       style={{
-                        objectFit: "cover", // Tetap cover agar rapi
-                        objectPosition: "top", // PENTING: Agar crop mulai dari atas (header website), bukan tengah
+                        objectFit: "cover",
+                        objectPosition: "top",
                       }}
                     />
-
-                    {/* Overlay Gradient */}
                     <div
                       className="position-absolute top-0 start-0 w-100 h-100"
                       style={{
